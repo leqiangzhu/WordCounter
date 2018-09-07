@@ -11,11 +11,14 @@ namespace WordCounter.Tests
     [TestMethod]
     public void GetWord_ReturnUserWord_String()
     {
-      //Arrange
 
+      string word = "hello world";
+      //string [] words = Regex.Split(word, @"\W+");
       //Act
-
+      string[] result = Regex.Split(word, @"\W+");
       //Assert
+      CollectionAssert.AreEqual({"hello","world"}, result);
+
 
     }
 

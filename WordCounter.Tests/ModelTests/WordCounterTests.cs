@@ -13,16 +13,35 @@ namespace WordCounter.Tests
     public void GetWord_ReturnUserWord_String()
     {
 
-      string word = "hello world";
+      string words = "hello,world";
       String[] array={"hello","world"};
       //string [] words = Regex.Split(word, @"\W+");
       //Act
-      String[] result = Regex.Split(word, @"\W+");
+      String[] result = Regex.Split(words, @"\W+");
       //Assert
       CollectionAssert.AreEqual(array, result);
 
 
     }
+
+    [TestMethod]
+    public void CountWord_ReturnUserWord_int()
+    {
+      string words = "hello,world hello";
+      string word="hello";
+      //Act
+      RepeatCounter RC= new RepeatCounter();
+      int result= RC.CountWord(words,word);
+      //Assert
+      Assert.AreEqual(2, result);
+
+
+    }
+
+
+
+
+
 
     }
 

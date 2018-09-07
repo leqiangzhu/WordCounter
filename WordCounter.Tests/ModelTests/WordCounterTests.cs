@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using WordCounter.Models;
 using System;
@@ -13,11 +14,12 @@ namespace WordCounter.Tests
     {
 
       string word = "hello world";
+      String[] array={"hello","world"};
       //string [] words = Regex.Split(word, @"\W+");
       //Act
-      string[] result = Regex.Split(word, @"\W+");
+      String[] result = Regex.Split(word, @"\W+");
       //Assert
-      CollectionAssert.AreEqual({"hello","world"}, result);
+      CollectionAssert.AreEqual(array, result);
 
 
     }

@@ -1,0 +1,7 @@
+/Users/ya-tzucheng/Desktop/csharpWeek1/WordCounter.Solution/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.deps.json
+/Users/ya-tzucheng/Desktop/csharpWeek1/WordCounter.Solution/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.dll
+/Users/ya-tzucheng/Desktop/csharpWeek1/WordCounter.Solution/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.pdb
+/Users/ya-tzucheng/Desktop/csharpWeek1/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.csproj.CoreCompileInputs.cache
+/Users/ya-tzucheng/Desktop/csharpWeek1/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.AssemblyInfo.cs
+/Users/ya-tzucheng/Desktop/csharpWeek1/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.dll
+/Users/ya-tzucheng/Desktop/csharpWeek1/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.pdb

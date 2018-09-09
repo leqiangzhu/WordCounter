@@ -6,41 +6,96 @@ namespace WordCounter.Models
 {
   public class RepeatCounter
   {
-    public int CountWord(string  words,string  word)
+
+    private  string _sentence;
+    private  string _word;
+
+    public RepeatCounter(string sentence,string word)
     {
-      //Console.WriteLine("please input words");
-    //  words=Console.ReadLine();
-    //  Console.WriteLine("please input word you want to count");
-    //  word=Console.ReadLine();
-      //use Regex.Split method,put the string into a string array
-      String[] wordsArray=Regex.Split(words, @"\W+");
-      int count =0;
-      //use for loop ,look for the matching word
-      for(int i=0; i<wordsArray.Length; i++)
+      _sentence = sentence;
+      _word = word;
+    }
+
+    public void SetWords(string sentence)
+    {
+      _sentence=sentence;
+    }
+
+    public string GetWords()
+    {
+      return _sentence;
+    }
+
+
+    public void SetWord(string word)
+    {
+      _word=word;
+    }
+
+    public string GetWord()
+    {
+      return _word;
+    }
+
+    //the method to Check the input if viod
+    public bool CheckWord(string word)
+    {
+      if (word==" "|| word =="" || word==null)
       {
-        if (word==wordsArray[i])
+        return false;
+        //Console.WriteLine("please input sentence");
+      }
+      return true;
+    }
+
+    public int CountWord(string  sentence,string  word)
+    {
+      //use Regex.Split method,put the string into a string array
+      String[] sentenceArray=Regex.Split(sentence, @"\W+");
+      //declear the int  var=0;
+      int count =0;
+      //use for loop ,compare the word(which the uesr wants to match ),look for the matching word
+      //count how many times, and return it
+      for(int i=0; i<sentenceArray.Length; i++)
+      {
+        if (word.ToLower()==sentenceArray[i].ToLower())
         {
           //count the number
           count++;
         }
-
       }
-
       return count;
-
     }
 
 
+    // public void StarProgram()
+    // {
+    //
+    // }
   }
 
   public class Program
   {
     public static void Main()
     {
-      RepeatCounter RC= new RepeatCounter();
+      bool sentenceFlag=true;
+      bool wordFlag=true;
+      Console.WriteLine("please input a sentence");
+      string sentence = Console.ReadLine();
+      Console.WriteLine("please input a word");
+      string word = Console.ReadLine();
+      RepeatCounter rc=new RepeatCounter(sentence,word);
+      sentenceFlag =rc.CheckWord(sentence);
+      wordFlag =rc.CheckWord(word);
 
-    //  int number=RC.CountWord();
-    //  Console.WriteLine("out is :"+number);
+      if(sentenceFlag==false|| wordFlag==false)
+      {
+        Console.WriteLine("the input is viod,please input again");
+        Main();
+      }else{
+        int number=rc.CountWord(sentence ,word);
+        Console.WriteLine(word +"  appears  "+ number + " times.");
+      }
 
     }
   }

@@ -20,8 +20,19 @@ namespace WordCounter.Tests
       String[] result = Regex.Split(words, @"\W+");
       //Assert
       CollectionAssert.AreEqual(array, result);
-
-
+    }
+    //the method test input
+    [TestMethod]
+    public void CheckWord_ReturnUserWord_bool()
+    {
+      //Arrange
+      string words = " ";
+      string word = "hello";
+      RepeatCounter RC= new RepeatCounter(words,word);
+      //Act
+      bool result = RC.CheckWord(words);
+      //Assert
+      Assert.AreEqual(false, result);
     }
 
     [TestMethod]
@@ -30,19 +41,10 @@ namespace WordCounter.Tests
       string words = "hello,world hello";
       string word="hello";
       //Act
-      RepeatCounter RC= new RepeatCounter();
+      RepeatCounter RC= new RepeatCounter(words,word);
       int result= RC.CountWord(words,word);
       //Assert
       Assert.AreEqual(2, result);
-
-
     }
-
-
-
-
-
-
     }
-
   }

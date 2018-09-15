@@ -1,0 +1,23 @@
+
+
+<div class="container">
+  <div id="Result">
+    <h2>The word <span id ="tagerword"><strong>@Model.GetWord()</strong></span>
+    appears  @Model.CountWord(@Model.GetWords(),@Model.GetWord())  times
+    in the sentence:</h2>
+    <h1>@Model.GetWords()</h1>
+  </div>
+
+
+  <form action="/Result" method="Post">
+    <h4><input type="hidden" name="new-words" value="@Model.GetWords()"></h4>
+    <label for="new-word">Enter a new word .</label>
+    <input class="form-control" id="new-word" name="new-word" type="text" />
+    <button type="submit" class="btn">Submit</button>
+  </form>
+
+
+  <form  action="/" method="Get">
+    <button type="submit" class="btn">Home</button>
+  </form>
+</div>

@@ -1,6 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System;
+
 
 namespace WordCounter.Models
 {
@@ -10,10 +11,10 @@ namespace WordCounter.Models
     private  string _sentence;
     private  string _word;
 
-    public RepeatCounter(string sentence,string word)
+    public RepeatCounter( )
     {
-      _sentence = sentence;
-      _word = word;
+      // _sentence = sentence;
+      // _word = word;
     }
 
     public void SetWords(string sentence)
@@ -48,10 +49,10 @@ namespace WordCounter.Models
       return true;
     }
 
-    public int CountWord(string  sentence,string  word)
+    public int CountWord(string  words,string  word)
     {
       //use Regex.Split method,put the string into a string array
-      String[] sentenceArray=Regex.Split(sentence, @"\W+");
+      String[] sentenceArray=Regex.Split(words, @"\W+");
       //declear the int  var=0;
       int count =0;
       //use for loop ,compare the word(which the uesr wants to match ),look for the matching word
@@ -74,29 +75,29 @@ namespace WordCounter.Models
     // }
   }
 
-  public class Program
-  {
-    public static void Main()
-    {
-      bool sentenceFlag=true;
-      bool wordFlag=true;
-      Console.WriteLine("please input a sentence");
-      string sentence = Console.ReadLine();
-      Console.WriteLine("please input a word");
-      string word = Console.ReadLine();
-      RepeatCounter rc=new RepeatCounter(sentence,word);
-      sentenceFlag =rc.CheckWord(sentence);
-      wordFlag =rc.CheckWord(word);
-
-      if(sentenceFlag==false|| wordFlag==false)
-      {
-        Console.WriteLine("the input is viod,please input again");
-        Main();
-      }else{
-        int number=rc.CountWord(sentence ,word);
-        Console.WriteLine(word +"  appears  "+ number + " times.");
-      }
-
-    }
-  }
+  // public class Program
+  // {
+  //   public static void Main()
+  //   {
+  //     bool sentenceFlag=true;
+  //     bool wordFlag=true;
+  //     Console.WriteLine("please input a sentence");
+  //     string sentence = Console.ReadLine();
+  //     Console.WriteLine("please input a word");
+  //     string word1 = Console.ReadLine();
+  //     RepeatCounter rc=new RepeatCounter(sentence,word);
+  //     sentenceFlag =rc.CheckWord(sentence);
+  //     wordFlag =rc.CheckWord(word);
+  //
+  //     if(sentenceFlag==false|| wordFlag==false)
+  //     {
+  //       Console.WriteLine("the input is viod,please input again");
+  //       Main();
+  //     }else{
+  //       int number=rc.CountWord(sentence ,word);
+  //       Console.WriteLine(word +"  appears  "+ number + " times.");
+  //     }
+  //
+  //   }
+  // }
 }

@@ -14,7 +14,7 @@ body{
 
 }
 .container{
-	background:white;
+	background:#edd9c0;
 
 }
 
@@ -70,24 +70,17 @@ p{
 
 
 
-/* 
+
 footer{
+  background: #a8b6bf;
 	border-top: 1px solid gray;
 	text-align: center;
 	font-size: 2em;
 	line-height: 4em;
 	margin-top: 1em;
-} */
-
-div#footer {
-    position:fixed;
-    bottom:0px;
-    left:0px;
-    width:100%;
-    color:#CCC;
-    background:#333;
-    padding:8px;
 }
+
+
 
 #gotop{
 	overflow: hidden;

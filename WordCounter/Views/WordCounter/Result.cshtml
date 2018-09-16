@@ -4,10 +4,11 @@
 
 <div class="container">
   <div id="Result">
+    <h1>@Model.GetWords()</h1>
+      <br/>
     <h2>The word <span id ="tagerword"><strong>@Model.GetWord()</strong></span>
     appears  @Model.CountWord(@Model.GetWords(),@Model.GetWord())  times
     in the sentence:</h2>
-    <h1>@Model.GetWords()</h1>
   </div>
 
 

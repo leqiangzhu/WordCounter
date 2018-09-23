@@ -15,9 +15,9 @@ namespace WordCounter.Controllers
         [HttpPost("/Result")]
         public ActionResult CreateResult()
         {
-            RepeatCounter RepC = new RepeatCounter();
-            RepC.SetWords(Request.Form["new-words"]);
-            RepC.SetWord(Request.Form["new-word"]);
+            RepeatCounter RepC = new RepeatCounter(Request.Form["new-words"],Request.Form["new-word"]);
+            // RepC.SetWords(Request.Form["new-words"]);
+            // RepC.SetWord(Request.Form["new-word"]);
             return View("Result", RepC);
         }
     }

@@ -11,10 +11,10 @@ namespace WordCounter.Models
     private  string _sentence;
     private  string _word;
 
-    public RepeatCounter( )
+    public RepeatCounter( string sentence,string word)
     {
-      // _sentence = sentence;
-      // _word = word;
+      _sentence = sentence;
+      _word = word;
     }
 
     public void SetWords(string sentence)
